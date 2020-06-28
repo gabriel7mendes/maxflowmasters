@@ -1,7 +1,7 @@
 package br.com.maxflow.algorithm;
 
-import br.com.maxflow.graph.Edge;
-import br.com.maxflow.graph.Graph;
+import br.com.datastructures.graph.Edge;
+import br.com.datastructures.graph.Graph;
 
 public abstract class MaxFlow {
 	

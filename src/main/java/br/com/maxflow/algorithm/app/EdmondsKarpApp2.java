@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import br.com.maxflow.algorithm.EdmondsKarp;
-import br.com.maxflow.algorithm.worstcase.FordFulkersonWorstCase;
 
 public class EdmondsKarpApp2 {
 	

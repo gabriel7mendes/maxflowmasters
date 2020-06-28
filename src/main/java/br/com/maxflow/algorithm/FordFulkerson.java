@@ -1,8 +1,8 @@
 package br.com.maxflow.algorithm;
 
-import br.com.maxflow.graph.Edge;
-import br.com.maxflow.graph.Node;
-import br.com.maxflow.stack.Stack;
+import br.com.datastructures.graph.Edge;
+import br.com.datastructures.graph.Node;
+import br.com.datastructures.stack.Stack;
 
 public class FordFulkerson extends MaxFlow {
 	
