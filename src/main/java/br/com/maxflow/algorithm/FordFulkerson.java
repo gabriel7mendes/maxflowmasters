@@ -1,8 +1,8 @@
 package br.com.maxflow.algorithm;
 
-import br.com.datastructures.graph.Edge;
-import br.com.datastructures.graph.Node;
 import br.com.datastructures.stack.Stack;
+import br.com.maxflow.graph.Edge;
+import br.com.maxflow.graph.Node;
 
 public class FordFulkerson extends MaxFlow {
 	
@@ -18,6 +18,8 @@ public class FordFulkerson extends MaxFlow {
 		while(!stack.isEmpty()) {		
 			Node curr = stack.pop();
 		
+			randomAdjacencyList(curr);
+			
 			for(int i=0; i < curr.edgesSize(); i++) {
 				Edge edge = curr.getEdge(i);
 				
@@ -36,6 +38,10 @@ public class FordFulkerson extends MaxFlow {
 		}
 		
 		return true;
+	}
+	
+	protected void randomAdjacencyList(Node v) {
+		
 	}
 
 	@Override

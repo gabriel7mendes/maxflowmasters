@@ -1,8 +1,8 @@
 package br.com.maxflow.algorithm;
 
-import br.com.datastructures.graph.Edge;
-import br.com.datastructures.graph.Node;
 import br.com.datastructures.queue.Queue;
+import br.com.maxflow.graph.Edge;
+import br.com.maxflow.graph.Node;
 
 public class EdmondsKarp extends FordFulkerson {
 

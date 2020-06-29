@@ -1,10 +1,10 @@
-package br.com.maxflow.algorithm.worstcase;
+package br.com.maxflow.algorithm.cases;
 
 import br.com.maxflow.algorithm.FordFulkerson;
 
-public class FordFulkersonWorstCase extends FordFulkerson {
+public class FordFulkersonCase extends FordFulkerson {
 	
-	public FordFulkersonWorstCase(int n) {
+	public FordFulkersonCase(int n) {
 		super(n);
 	}
 
@@ -34,6 +34,7 @@ public class FordFulkersonWorstCase extends FordFulkerson {
 	    		w++;
 	        }    	
 	    }
+	    
     	addEdge(v, sink, flow);	
 	}
 
