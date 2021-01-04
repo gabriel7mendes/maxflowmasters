@@ -8,14 +8,15 @@ public class RandomFordFulkersonWorstCase extends RandomFordFulkerson {
 	public RandomFordFulkersonWorstCase(int n) {
 		super(n);
 	}
-	
+		
 	protected void worstPath(int count, int source, int sink) {
 		if(count % 2 == 0) {
-			graph.setParent(sink, graph.getNode(2).getEdge(0));
-			graph.setParent(2, graph.getNode(1).getEdge(1));
+			graph.setParent(sink, graph.getEdge(2, sink));
+			graph.setParent(2, graph.getEdge(1, 2));
 			
 		} else {
-			graph.setParent(1, graph.getNode(2).getEdge(3));
+			graph.setParent(sink, graph.getEdge(1, sink));
+			graph.setParent(1, graph.getEdge(2, 1));
 		}	
 	}
 	
@@ -40,6 +41,7 @@ public class RandomFordFulkersonWorstCase extends RandomFordFulkerson {
     	addEdge(v, sink, cap);
 	}
 	
+	@Override
 	public int maxFlow(int source, int sink) {
 		int maxFlow = 0;
 		int count = 0;
@@ -62,7 +64,6 @@ public class RandomFordFulkersonWorstCase extends RandomFordFulkerson {
 	       		edge.pushFlow(df);	 
 	     
 	    	maxFlow += df;
-	    	System.out.println(maxFlow);
 	    	count++;
 		}
 		

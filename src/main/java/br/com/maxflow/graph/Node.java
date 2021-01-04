@@ -29,6 +29,10 @@ public class Node {
 	public Edge getEdge(int i) {
 		return edges.get(i);
 	}
+	
+	public LinkedList<Edge> getEdges() {
+		return edges;
+	}
 
 	public Edge getParent() {
 		return parent;

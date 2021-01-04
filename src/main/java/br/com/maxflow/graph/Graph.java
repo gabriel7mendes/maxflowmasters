@@ -1,5 +1,7 @@
 package br.com.maxflow.graph;
 
+import br.com.datastructures.linkedlist.LinkedList;
+
 public class Graph {
 	
 	private Node[] nodes;
@@ -35,6 +37,20 @@ public class Graph {
 			return nodes[key].getParent();
 		else
 			return null;
+	}
+	
+	public Edge getEdge(int from, int to) {
+		LinkedList<Edge> edges = nodes[from].getEdges();
+		
+		for(int i=0; i < edges.size(); i ++) {
+			Edge edge = edges.get(i);
+			int t = edge.getTo();
+		    
+			if(to == t)
+			   return edge;
+		}
+		
+		return null;
 	}
 
 	public void resetParent() {

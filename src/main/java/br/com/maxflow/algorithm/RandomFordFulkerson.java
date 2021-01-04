@@ -10,7 +10,7 @@ import br.com.maxflow.graph.Node;
 public class RandomFordFulkerson {
 	
 	protected Graph graph;
-	
+
 	public RandomFordFulkerson(int n) {
 		graph = new Graph(n);  
 	}
@@ -19,7 +19,7 @@ public class RandomFordFulkerson {
 		graph.addEdge(from, to, cap);
 	}
 	
-	protected void randomAdjacencyList(Node v) {
+	private void randomAdjacencyList(Node v) {
        Random r = new Random();
        int n = v.edgesSize();
        
@@ -53,6 +53,8 @@ public class RandomFordFulkerson {
 					stack.push(graph.getNode(edge.getTo()));
 				}
 			}	
+			
+			
 			
 		}
 		
