@@ -2,12 +2,19 @@ package br.com.maxflow.algorithm;
 
 import br.com.datastructures.stack.Stack;
 import br.com.maxflow.graph.Edge;
+import br.com.maxflow.graph.Graph;
 import br.com.maxflow.graph.Node;
 
-public class FordFulkerson extends MaxFlow {
+public class FordFulkerson {
+	
+    protected Graph graph;
 	
 	public FordFulkerson(int n) {
-		super(n);
+		graph = new Graph(n);  
+	}
+	 	
+	public void addEdge(int from, int to, int cap) {
+		graph.addEdge(from, to, cap);
 	}
 	
 	protected boolean hasPath(int source, int sink) {
@@ -17,9 +24,7 @@ public class FordFulkerson extends MaxFlow {
 	    
 		while(!stack.isEmpty()) {		
 			Node curr = stack.pop();
-		
-			randomAdjacencyList(curr);
-			
+					
 			for(int i=0; i < curr.edgesSize(); i++) {
 				Edge edge = curr.getEdge(i);
 				
@@ -40,13 +45,28 @@ public class FordFulkerson extends MaxFlow {
 		return true;
 	}
 	
-	protected void randomAdjacencyList(Node v) {
+	public int maxFlow(int source, int sink) {
+		int maxFlow = 0;
 		
-	}
-
-	@Override
-	protected void worstPath(int count, int source, int sink) {
+		while(true)
+		{
+			graph.resetParent();
+			
+			if (!hasPath(source,sink)) 
+                break;
+				
+        	int df = Integer.MAX_VALUE;
+        	
+        	for(Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom()))
+       		    df = Math.min(df, edge.getCapacity() - edge.getFlow());
+       	
+	       	for(Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom()))
+	       		edge.pushFlow(df);	 
+         
+        	maxFlow += df;
+		}
 		
+		return maxFlow;
 	}
 	
 }
