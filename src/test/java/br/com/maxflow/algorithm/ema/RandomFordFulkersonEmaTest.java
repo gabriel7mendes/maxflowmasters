@@ -9,7 +9,7 @@ public class RandomFordFulkersonEmaTest {
 	public void test() {
 		int m = 1001;
 		int flow = 1000;
-		RandomFordFulkersonEma randomFordFulkersonEma = new RandomFordFulkersonEma(m - 1);
+		RandomFordFulkersonEma randomFordFulkersonEma = new RandomFordFulkersonEma(m-1);
 
 		int s = 0;
 		int t = 3;
