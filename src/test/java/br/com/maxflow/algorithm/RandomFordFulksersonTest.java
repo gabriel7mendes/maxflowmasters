@@ -1,12 +1,12 @@
-package br.com.maxflow.algorithm.app;
+package br.com.maxflow.algorithm;
 
-import java.io.IOException;
+import org.junit.Assert;
+import org.junit.Test;
 
-import br.com.maxflow.algorithm.RandomFordFulkerson;
-
-public class RandomFordFulkersonApp {
+public class RandomFordFulksersonTest {
 	
-	public static void main(String[] args) throws IOException {
+	@Test
+	public void test() {
 		int m = 10;
 		RandomFordFulkerson randomFordFulkerson = new RandomFordFulkerson(m-1);
 		
@@ -24,7 +24,7 @@ public class RandomFordFulkersonApp {
 		randomFordFulkerson.addEdge(4, 3, 7);
 		randomFordFulkerson.addEdge(4, t, 4);
 		
-		System.out.println(randomFordFulkerson.maxFlow(s, t));
+		Assert.assertEquals(randomFordFulkerson.maxFlow(s, t), 23);
 	}
 
 }

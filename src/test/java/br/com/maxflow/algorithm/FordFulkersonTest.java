@@ -1,18 +1,20 @@
-package br.com.maxflow.algorithm.app;
+package br.com.maxflow.algorithm;
 
-import java.io.IOException;
+import org.junit.Assert;
+import org.junit.Test;
 
 import br.com.maxflow.algorithm.FordFulkerson;
 
-public class FordFulkersonApp {
-	
-	public static void main(String[] args) throws IOException {
+public class FordFulkersonTest {
+
+	@Test
+	public void test() {
 		int m = 10;
-		FordFulkerson fordFulkerson = new FordFulkerson(m-1);
-		
+		FordFulkerson fordFulkerson = new FordFulkerson(m - 1);
+
 		int s = 0;
 		int t = 5;
-		
+
 		fordFulkerson.addEdge(s, 1, 16);
 		fordFulkerson.addEdge(s, 2, 13);
 		fordFulkerson.addEdge(1, 2, 10);
@@ -24,7 +26,7 @@ public class FordFulkersonApp {
 		fordFulkerson.addEdge(4, 3, 7);
 		fordFulkerson.addEdge(4, t, 4);
 		
-		System.out.println(fordFulkerson.maxFlow(s, t));
+		Assert.assertEquals(fordFulkerson.maxFlow(s, t), 23);
 	}
 
 }

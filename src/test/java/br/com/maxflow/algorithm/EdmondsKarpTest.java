@@ -1,18 +1,20 @@
-package br.com.maxflow.algorithm.app;
+package br.com.maxflow.algorithm;
 
-import java.io.IOException;
+import org.junit.Assert;
+import org.junit.Test;
 
 import br.com.maxflow.algorithm.EdmondsKarp;
 
-public class EdmondsKarpApp {
+public class EdmondsKarpTest {
 
-	public static void main(String[] args) throws IOException {
+	@Test
+	public void test() {
 		int m = 10;
-		EdmondsKarp edmondsKarp = new EdmondsKarp(m-1);
-		
+		EdmondsKarp edmondsKarp = new EdmondsKarp(m - 1);
+
 		int s = 0;
 		int t = 5;
-		
+
 		edmondsKarp.addEdge(s, 1, 16);
 		edmondsKarp.addEdge(s, 2, 13);
 		edmondsKarp.addEdge(1, 2, 10);
@@ -23,8 +25,8 @@ public class EdmondsKarpApp {
 		edmondsKarp.addEdge(3, t, 20);
 		edmondsKarp.addEdge(4, 3, 7);
 		edmondsKarp.addEdge(4, t, 4);
-		
-		System.out.println(edmondsKarp.maxFlow(s, t));
+
+		Assert.assertEquals(edmondsKarp.maxFlow(s, t), 23);
 	}
-	
+
 }

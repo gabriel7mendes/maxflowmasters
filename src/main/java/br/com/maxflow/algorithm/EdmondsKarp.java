@@ -61,7 +61,7 @@ public class EdmondsKarp {
        	
 	       	for(Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom()))
 	       		edge.pushFlow(df);	 
-         
+     
         	maxFlow += df;
 		}
 		

@@ -27,7 +27,7 @@ public class Graph {
 	public int nodesSize() {
 		return nodes.length;
 	}
-
+	
 	public Node getNode(int key) {
 		return nodes[key];
 	}
