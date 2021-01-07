@@ -1,11 +1,11 @@
 package br.com.maxflow.algorithm.ema;
 
-import br.com.maxflow.algorithm.RandomFordFulkerson;
+import br.com.maxflow.algorithm.FordFulkerson;
 import br.com.maxflow.graph.Edge;
 
-public class RandomFordFulkersonEma extends RandomFordFulkerson {
-
-	public RandomFordFulkersonEma(int n) {
+public class FordFulkersonEma extends FordFulkerson {
+	
+	public FordFulkersonEma(int n) {
 		super(n);
 	}
 		
@@ -76,13 +76,12 @@ public class RandomFordFulkersonEma extends RandomFordFulkerson {
 	   	
 	       	for(Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom()))
 	       		edge.pushFlow(df);	 
-	 
+	     
 	    	maxFlow += df;
 	    	count++;
 		}
 		
 		return maxFlow;
 	}
-
 
 }

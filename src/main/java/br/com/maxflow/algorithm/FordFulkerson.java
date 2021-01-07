@@ -62,7 +62,7 @@ public class FordFulkerson {
        	
 	       	for(Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom()))
 	       		edge.pushFlow(df);	 
-         
+           System.out.println(maxFlow);
         	maxFlow += df;
 		}
 		
