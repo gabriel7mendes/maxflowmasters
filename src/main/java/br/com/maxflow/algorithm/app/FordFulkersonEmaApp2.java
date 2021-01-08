@@ -1,14 +1,17 @@
 package br.com.maxflow.algorithm.app;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 import br.com.maxflow.algorithm.ema.FordFulkersonEma;
 
 public class FordFulkersonEmaApp2 {
 	
 	public static void main(String[] args) throws IOException {
-		int m = 1001;
-		int flow = Integer.parseInt(args[0]);
+		Scanner sc = new Scanner(System.in);
+		
+		int m = 1000;
+		int flow = sc.nextInt();
 		
 		FordFulkersonEma fordFulkersonEma = new FordFulkersonEma(m-1);
 				
@@ -18,6 +21,8 @@ public class FordFulkersonEmaApp2 {
 		fordFulkersonEma.createEdges(flow, m, s, t);
 		
 		System.out.println(fordFulkersonEma.maxFlow(s, t));
+		
+		sc.close();
 	}
 
 }
