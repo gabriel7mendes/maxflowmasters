@@ -9,18 +9,19 @@ public class FordFulkersonEmaApp3 {
 	
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
+		sc.useDelimiter("( *, *)|[\r\n]+");
 		
-		int m = sc.nextInt();
-		int flow = sc.nextInt();
+		int m = Integer.parseInt(sc.nextLine());
+		int cap = Integer.parseInt(sc.nextLine());
 		
 		FordFulkersonEma fordFulkersonEma = new FordFulkersonEma(m-1);
 				
 		int s = 0;
 		int t = 3;
 			
-		fordFulkersonEma.createEdges(flow, m, s, t);
+		fordFulkersonEma.createEdges(cap, m, s, t);
 		
-		System.out.println(fordFulkersonEma.maxFlow(s, t));
+		System.out.println("maxflow: " + fordFulkersonEma.maxFlow(s, t));
 		
 		sc.close();
 	}

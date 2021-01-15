@@ -11,16 +11,16 @@ public class FordFulkersonEmaApp2 {
 		Scanner sc = new Scanner(System.in);
 		
 		int m = 1000;
-		int flow = sc.nextInt();
+		int cap = sc.nextInt();
 		
 		FordFulkersonEma fordFulkersonEma = new FordFulkersonEma(m-1);
 				
 		int s = 0;
 		int t = 3;
 			
-		fordFulkersonEma.createEdges(flow, m, s, t);
+		fordFulkersonEma.createEdges(cap, m, s, t);
 		
-		System.out.println(fordFulkersonEma.maxFlow(s, t));
+		System.out.println("maxflow: " + fordFulkersonEma.maxFlow(s, t));
 		
 		sc.close();
 	}

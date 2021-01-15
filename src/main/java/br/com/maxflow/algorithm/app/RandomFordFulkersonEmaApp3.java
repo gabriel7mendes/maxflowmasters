@@ -17,7 +17,7 @@ public class RandomFordFulkersonEmaApp3 {
 			
 		randomFordFulkersonEma.createEdges(flow, m, s, t);
 		
-		System.out.println(randomFordFulkersonEma.maxFlow(s, t));
+		System.out.println("maxflow: " + randomFordFulkersonEma.maxFlow(s, t));
 	}
 
 }

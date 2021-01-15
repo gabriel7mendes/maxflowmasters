@@ -11,16 +11,16 @@ public class RandomFordFulkersonEmaApp1 {
 		Scanner sc = new Scanner(System.in);
 		
 		int m = sc.nextInt();
-		int flow = 1000;
+		int cap = 1000;
 		
 		RandomFordFulkersonEma randomFordFulkersonEma = new RandomFordFulkersonEma(m-1);
 				
 		int s = 0;
 		int t = 3;
 			
-		randomFordFulkersonEma.createEdges(flow, m, s, t);
+		randomFordFulkersonEma.createEdges(cap, m, s, t);
 		
-		System.out.println(randomFordFulkersonEma.maxFlow(s, t));
+		System.out.println("maxflow: " + randomFordFulkersonEma.maxFlow(s, t));
 		
 		sc.close();
 	}

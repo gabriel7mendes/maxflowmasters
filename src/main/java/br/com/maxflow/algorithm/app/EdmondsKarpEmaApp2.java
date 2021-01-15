@@ -17,7 +17,7 @@ public class EdmondsKarpEmaApp2 {
 			
 		edmondsKarpEma.createEdges(flow, m, s, t);
 		
-		System.out.println(edmondsKarpEma.maxFlow(s, t));
+		System.out.println("maxflow: " + edmondsKarpEma.maxFlow(s, t));
 	}
 
 }
