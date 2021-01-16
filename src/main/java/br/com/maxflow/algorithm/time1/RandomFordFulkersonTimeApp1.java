@@ -1,4 +1,4 @@
-package br.com.maxflow.algorithm.time;
+package br.com.maxflow.algorithm.time1;
 
 import java.io.IOException;
 
@@ -19,11 +19,11 @@ public class RandomFordFulkersonTimeApp1 {
 			
 		randomFordFulkersonEma.createEdges(cap, m, s, t);
 		
-		System.out.println(randomFordFulkersonEma.maxFlow(s, t));
+		System.out.println("maxflow: " + randomFordFulkersonEma.maxFlow(s, t));
 		
 		long end = System.currentTimeMillis();
 		
-		System.out.println("Time (ms): " + (end - begin));
+		System.out.println("time (ms): " + (end - begin));
 	}
 
 }
