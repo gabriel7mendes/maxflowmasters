@@ -1,10 +1,10 @@
-package br.com.maxflow.step;
+package br.com.maxflow.step1;
 
 import java.io.IOException;
 
 import br.com.maxflow.algorithm.ema.FordFulkersonEma;
 
-public class FordFulkersonStepApp1 {
+public class FordFulkersonEmaStep1App1 {
 	
 	public static void main(String[] args) throws IOException {		
 		int m = Integer.parseInt(args[0]);

@@ -7,7 +7,7 @@ import br.com.maxflow.algorithm.ema.EdmondsKarpEma;
 public class EdmondsKarpEmaApp2 {
 	
 	public static void main(String[] args) throws IOException {
-		int m = 1001;
+		int m = 1000;
 		int flow = Integer.parseInt(args[0]);
 		
 		EdmondsKarpEma edmondsKarpEma = new EdmondsKarpEma(m-1);

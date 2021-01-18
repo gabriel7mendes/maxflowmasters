@@ -1,10 +1,10 @@
-package br.com.maxflow.time;
+package br.com.maxflow.time1;
 
 import java.io.IOException;
 
 import br.com.maxflow.algorithm.ema.FordFulkersonEma;
 
-public class FordFulkersonTimeApp1 {
+public class FordFulkersonEmaTime1App1 {
 	
 	public static void main(String[] args) throws IOException {	
 		long begin = System.currentTimeMillis();

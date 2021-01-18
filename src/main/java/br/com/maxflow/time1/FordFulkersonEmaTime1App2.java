@@ -1,14 +1,14 @@
-package br.com.maxflow.time;
+package br.com.maxflow.time1;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
 import br.com.maxflow.algorithm.ema.FordFulkersonEma;
 
-public class FordFulkersonTimeApp2 {
+public class FordFulkersonEmaTime1App2 {
 	
 	public static void main(String[] args) throws IOException {	
-		FileWriter fw = new FileWriter("FordFulkersonTimeApp2.txt");
+		FileWriter fw = new FileWriter("FordFulkersonEmaTime1App2.txt");
 		
 		for(int m= 15000; m < 125000; m+= 5000) {
 			long begin = System.currentTimeMillis();
