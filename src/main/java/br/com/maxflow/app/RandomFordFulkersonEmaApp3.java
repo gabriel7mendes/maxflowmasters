@@ -1,4 +1,4 @@
-package br.com.maxflow.algorithm.app;
+package br.com.maxflow.app;
 
 import java.io.IOException;
 

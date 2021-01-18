@@ -1,4 +1,4 @@
-package br.com.maxflow.algorithm.time1;
+package br.com.maxflow.time;
 
 import java.io.IOException;
 
@@ -25,6 +25,5 @@ public class FordFulkersonTimeApp1 {
 		
 		System.out.println("time (ms): " + (end - begin));
 	}
-
 
 }

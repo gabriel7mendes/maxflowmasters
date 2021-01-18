@@ -1,4 +1,4 @@
-package br.com.maxflow.algorithm.time1;
+package br.com.maxflow.time;
 
 import java.io.IOException;
 

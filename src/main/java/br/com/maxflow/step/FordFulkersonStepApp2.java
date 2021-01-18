@@ -1,18 +1,16 @@
-package br.com.maxflow.algorithm.time1;
+package br.com.maxflow.step;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
 import br.com.maxflow.algorithm.ema.FordFulkersonEma;
 
-public class FordFulkersonTimeApp2 {
+public class FordFulkersonStepApp2 {
 	
 	public static void main(String[] args) throws IOException {	
-		FileWriter fw = new FileWriter("FordFulkersonTimeApp2.txt");
+		FileWriter fw = new FileWriter("FordFulkersonStepApp2.txt");
 		
 		for(int m= 15000; m < 125000; m+= 5000) {
-			long begin = System.currentTimeMillis();
-			
 			int cap = 1000;
 			
 			FordFulkersonEma fordFulkersonEma = new FordFulkersonEma(m-1);
@@ -24,11 +22,9 @@ public class FordFulkersonTimeApp2 {
 			
 			fordFulkersonEma.maxFlow(s, t);
 			
-			long end = System.currentTimeMillis();
+			System.out.println(m + "," + fordFulkersonEma.steps());
 			
-			System.out.println(m + "," + (end - begin));
-			
-			fw.write(m + "," + (end - begin) + "\n");
+			fw.write(m + "," + fordFulkersonEma.steps() + "\n");
 		}
 		
 		fw.close();
