@@ -42,8 +42,7 @@ public class FordFulkerson {
 					stack.push(graph.getNode(edge.getTo()));
 					steps+=2;
 				}
-			}	
-			
+			}				
 		}
 		
 		steps += stack.steps();
@@ -81,7 +80,7 @@ public class FordFulkerson {
 	       		edge.pushFlow(df);	
 	       		steps++;
 	       	}
-	       		        
+	       		   System.out.println(maxFlow);     
         	maxFlow += df;
         	steps++;
 		}
