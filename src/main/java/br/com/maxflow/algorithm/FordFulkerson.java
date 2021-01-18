@@ -89,7 +89,7 @@ public class FordFulkerson {
 	}
 	
 	public long steps() {
-		return steps;
+		return steps + graph.steps();
 	}
 	
 }
