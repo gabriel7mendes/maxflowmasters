@@ -21,5 +21,4 @@ public class FordFulkersonEmaStep3App1 {
 		System.out.println("number of steps: " + fordFulkersonEma.steps());
 	}
 
-
 }

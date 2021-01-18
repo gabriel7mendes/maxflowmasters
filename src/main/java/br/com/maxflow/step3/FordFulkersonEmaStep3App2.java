@@ -10,7 +10,7 @@ public class FordFulkersonEmaStep3App2 {
 	public static void main(String[] args) throws IOException {	
 		FileWriter fw = new FileWriter("FordFulkersonEmaStep3App2.txt");
 		
-		for(int k = 15000;  k < 125000;  k += 5000) {		
+		for(int k = 1000;  k <= 20000;  k += 1000) {		
 			FordFulkersonEma fordFulkersonEma = new FordFulkersonEma(k-1);
 					
 			int s = 0;

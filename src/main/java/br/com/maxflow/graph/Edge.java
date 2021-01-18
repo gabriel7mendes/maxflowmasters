@@ -54,10 +54,10 @@ public class Edge {
 	}
 
 	public void pushFlow(int flow) {
-		steps++;
 		this.flow += flow;
 		steps++;
 		reverse.flow -= flow;
+		steps++;
 	}
 	
 	public long steps() {

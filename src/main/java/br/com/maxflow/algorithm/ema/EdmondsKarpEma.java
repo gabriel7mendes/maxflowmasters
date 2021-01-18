@@ -6,26 +6,34 @@ public class EdmondsKarpEma extends EdmondsKarp {
 	
 	public EdmondsKarpEma(int n) {
 		super(n);
+		steps++;
 	}
 
-	public void createEdges(int flow, int m, int source, int sink) {		
-		addEdge(1, sink, flow);
-		addEdge(source, 2, flow);
-	    addEdge(1, 2, 1);    
-	    addEdge(2, sink, flow);
-    	
-	    int v = 1; 	
-    	int w = 4;
-    	
-	    if(m > 5) { 	    	
-   	    	for(int i=0; i < (m-5); i++) {
-	    		addEdge(w, v, flow);	 
-	    		v = w;
-	    		w++;
-	        }    	    	   	
-	    }
-	    	    
-		addEdge(source, v, flow);
+	public void createEdges(int cap, int m, int source, int sink) {		
+		addEdge(1, sink, cap);
+		steps++;
+		addEdge(source, 2, cap);
+		steps++;
+		addEdge(1, 2, 1);
+		steps++;
+		addEdge(2, sink, cap);
+		steps++;
+		
+		if (m > 5) {
+			addEdge(4, 1, cap);
+			steps++;
+			
+			for (int i = 4; i < (m-2); i++) {
+				addEdge(i+1, i, cap);
+				steps++;
+			}
+			
+			addEdge(source, m-2, cap);
+			steps++;
+		} else {
+			addEdge(source, 1, cap);
+			steps++;
+		}
 	}
 
 }
