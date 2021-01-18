@@ -46,6 +46,8 @@ public class FordFulkerson {
 			
 		}
 		
+		steps += stack.steps();
+		
 		if(graph.getParent(sink) == null) {
 			steps++;
 			return false;

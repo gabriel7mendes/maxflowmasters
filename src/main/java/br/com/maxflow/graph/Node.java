@@ -60,6 +60,6 @@ public class Node {
 	}
 	
 	public long steps() {
-		return parent !=null ? steps + parent.steps() : steps;
+		return parent != null ? steps + parent.steps() + edges.steps() : steps;
 	}
 }
