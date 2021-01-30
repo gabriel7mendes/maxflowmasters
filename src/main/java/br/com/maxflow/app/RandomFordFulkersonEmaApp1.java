@@ -1,5 +1,6 @@
 package br.com.maxflow.app;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -10,7 +11,8 @@ public class RandomFordFulkersonEmaApp1 {
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		
-		int m = sc.nextInt();
+		String fileName = sc.next();
+		int m = Integer.parseInt(sc.next());
 		int cap = 1000;
 		
 		RandomFordFulkersonEma randomFordFulkersonEma = new RandomFordFulkersonEma(m-1);
@@ -21,6 +23,11 @@ public class RandomFordFulkersonEmaApp1 {
 		randomFordFulkersonEma.createEdges(cap, m, s, t);
 		
 		System.out.println("maxflow: " + randomFordFulkersonEma.maxFlow(s, t));
+		System.out.println("number of steps: " + randomFordFulkersonEma.steps());
+		
+		FileWriter fw = new FileWriter(fileName);
+		fw.write(randomFordFulkersonEma.steps() + "\n");
+		fw.close();
 		
 		sc.close();
 	}

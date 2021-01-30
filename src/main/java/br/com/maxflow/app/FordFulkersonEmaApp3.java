@@ -1,5 +1,6 @@
 package br.com.maxflow.app;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -9,10 +10,10 @@ public class FordFulkersonEmaApp3 {
 	
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
-		sc.useDelimiter("( *, *)|[\r\n]+");
 		
-		int m = Integer.parseInt(sc.nextLine());
-		int cap = Integer.parseInt(sc.nextLine());
+		String fileName = sc.next();
+		int m = Integer.parseInt(sc.next());
+		int cap = Integer.parseInt(sc.next());
 		
 		FordFulkersonEma fordFulkersonEma = new FordFulkersonEma(m-1);
 				
@@ -22,6 +23,11 @@ public class FordFulkersonEmaApp3 {
 		fordFulkersonEma.createEdges(cap, m, s, t);
 		
 		System.out.println("maxflow: " + fordFulkersonEma.maxFlow(s, t));
+		System.out.println("number of steps: " + fordFulkersonEma.steps());
+		
+		FileWriter fw = new FileWriter(fileName);
+		fw.write(fordFulkersonEma.steps() + "\n");
+		fw.close();
 		
 		sc.close();
 	}

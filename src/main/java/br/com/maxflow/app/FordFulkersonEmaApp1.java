@@ -11,8 +11,8 @@ public class FordFulkersonEmaApp1 {
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		
-		String fileName = args[0];
-		int m = sc.nextInt();
+		String fileName = sc.next();
+		int m = Integer.parseInt(sc.next());
 		int cap = 1000;
 		
 		FordFulkersonEma fordFulkersonEma = new FordFulkersonEma(m-1);
@@ -28,7 +28,7 @@ public class FordFulkersonEmaApp1 {
 		FileWriter fw = new FileWriter(fileName);
 		fw.write(fordFulkersonEma.steps() + "\n");
 		fw.close();
-		
+	
 		sc.close();
 	}
 

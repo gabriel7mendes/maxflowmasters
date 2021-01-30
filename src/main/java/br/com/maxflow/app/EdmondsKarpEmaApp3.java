@@ -1,5 +1,6 @@
 package br.com.maxflow.app;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -10,8 +11,9 @@ public class EdmondsKarpEmaApp3 {
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		
-		int m = sc.nextInt();
-		int flow = sc.nextInt();
+		String fileName = sc.next();
+		int m = Integer.parseInt(sc.next());
+		int flow = Integer.parseInt(sc.next());
 		
 		EdmondsKarpEma edmondsKarpEma = new EdmondsKarpEma(m-1);
 				
@@ -21,6 +23,11 @@ public class EdmondsKarpEmaApp3 {
 		edmondsKarpEma.createEdges(flow, m, s, t);
 		
 		System.out.println("maxflow: " + edmondsKarpEma.maxFlow(s, t));
+		System.out.println("number of steps: " + edmondsKarpEma.steps());
+		
+		FileWriter fw = new FileWriter(fileName);
+		fw.write(edmondsKarpEma.steps() + "\n");
+		fw.close();
 		
 		sc.close();
 	}
