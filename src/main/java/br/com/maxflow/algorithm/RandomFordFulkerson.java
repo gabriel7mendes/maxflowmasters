@@ -28,17 +28,23 @@ public class RandomFordFulkerson {
        int n = v.edgesSize();
        steps++;
        
+       //v.getEdges().printList();
+       
        for(int i=n-1; i > 0; i--) {
     	   int j = r.nextInt(i+1);
     	   steps++;
     	   
-    	   Edge temp = v.getEdge(i);
+    	   Edge ei = v.getEdge(i);
     	   steps++;
-    	   v.setEdge(i, v.getEdge(j));
+    	   Edge ej = v.getEdge(j);
     	   steps++;
-    	   v.setEdge(j, temp);
+    	   v.setEdge(i, ej);
+    	   steps++;
+    	   v.setEdge(j, ei);
     	   steps++;
        }
+       
+       //v.getEdges().printList();
 	}
 	
 	protected boolean hasPath(int source, int sink) {
@@ -54,19 +60,23 @@ public class RandomFordFulkerson {
 			
 			randomAdjacencyList(curr);
 			steps++;
+					
+			//System.out.print("list of " + curr + ": ");
 			
 			for(int i=0; i < curr.edgesSize(); i++) {
 				Edge edge = curr.getEdge(i);
 				steps++;
-				
 				if(graph.getParent(edge.getTo()) == null
 			    && edge.getTo() != source 
 			    && edge.getCapacity() > edge.getFlow()) {
 					graph.setParent(edge.getTo(), edge);
 					stack.push(graph.getNode(edge.getTo()));
+					//System.out.print(graph.getNode(edge.getTo()) + " ");
 					steps+=2;
 				}
-			}							
+			}	
+			
+			//System.out.println();
 		}
 		
 		steps += stack.steps();
@@ -95,10 +105,17 @@ public class RandomFordFulkerson {
 	    	int df = Integer.MAX_VALUE;
 	    	steps++;
 	    	
+	    	System.out.print("path: " );
+	    	
 	    	for(Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom())) {
+	    		System.out.print(edge.getTo() + " ");
 	    		df = Math.min(df, edge.getCapacity() - edge.getFlow());
 	    		steps++;
+	    		if(graph.getParent(edge.getFrom()) == null)
+	    			System.out.print(edge.getFrom() + " ");
 	    	}
+	    	
+	    	System.out.println();
 	   		    
 	       	for(Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom())) {
 	       		edge.pushFlow(df);	

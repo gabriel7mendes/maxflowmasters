@@ -12,15 +12,14 @@ public class FordFulkersonEmaApp3 {
 		Scanner sc = new Scanner(System.in);
 		
 		String fileName = sc.next();
-		int m = Integer.parseInt(sc.next());
-		int cap = Integer.parseInt(sc.next());
+		int k = Integer.parseInt(sc.next());
 		
-		FordFulkersonEma fordFulkersonEma = new FordFulkersonEma(m-1);
+		FordFulkersonEma fordFulkersonEma = new FordFulkersonEma(k-1);
 				
 		int s = 0;
 		int t = 3;
 			
-		fordFulkersonEma.createEdges(cap, m, s, t);
+		fordFulkersonEma.createEdges(k, k, s, t);
 		
 		System.out.println("maxflow: " + fordFulkersonEma.maxFlow(s, t));
 		System.out.println("number of steps: " + fordFulkersonEma.steps());

@@ -13,14 +13,14 @@ public class EdmondsKarpEmaApp2 {
 		
 		String fileName = sc.next();
 		int m = 1000;
-		int flow = Integer.parseInt(sc.next());
+		int cap = Integer.parseInt(sc.next());
 		
 		EdmondsKarpEma edmondsKarpEma = new EdmondsKarpEma(m-1);
 				
 		int s = 0;
 		int t = 3;
 			
-		edmondsKarpEma.createEdges(flow, m, s, t);
+		edmondsKarpEma.createEdges(cap, m, s, t);
 		
 		System.out.println("maxflow: " + edmondsKarpEma.maxFlow(s, t));
 		System.out.println("number of steps: " + edmondsKarpEma.steps());
