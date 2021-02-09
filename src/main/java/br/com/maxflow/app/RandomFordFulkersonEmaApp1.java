@@ -12,7 +12,7 @@ public class RandomFordFulkersonEmaApp1 {
 		
 		//String fileName = sc.next();
 		//int m = Integer.parseInt(sc.next());
-		int m = 5;
+		int m = 1000;
 		int cap = 1000;
 		
 		RandomFordFulkersonEma randomFordFulkersonEma = new RandomFordFulkersonEma(m-1);
@@ -39,7 +39,7 @@ public class RandomFordFulkersonEmaApp1 {
 		
 		//randomFordFulkersonEma.printAllPaths();
 		System.out.println("maxflow: " + randomFordFulkersonEma.maxFlow(s, t));
-		//System.out.println("number of steps: " + randomFordFulkersonEma.steps());
+		System.out.println("number of steps: " + randomFordFulkersonEma.steps());
 		
 		//FileWriter fw = new FileWriter(fileName);
 		//fw.write(randomFordFulkersonEma.steps() + "\n");
