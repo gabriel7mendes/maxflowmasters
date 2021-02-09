@@ -47,7 +47,7 @@ public class RandomFordFulkerson {
 		}
 		
 		steps += stack.steps();
-
+			
 		if (graph.getParent(sink) == null) {
 			steps++;
 			return false;
@@ -110,6 +110,10 @@ public class RandomFordFulkerson {
 
 		steps += stack.steps();
 		
+//		for (Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom())) {
+//			System.out.println(edge); 
+//		}
+		
 		if (graph.getParent(sink) == null) {
 			steps++;
 			return false;
@@ -143,6 +147,9 @@ public class RandomFordFulkerson {
 				df = Math.min(df, edge.getCapacity() - edge.getFlow());
 				steps++;
 			}
+			
+			//System.out.println("df: " + df);
+			//System.out.println("***********************");
 
 			for (Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom())) {
 				edge.pushFlow(df);

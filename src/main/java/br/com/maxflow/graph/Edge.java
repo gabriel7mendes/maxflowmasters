@@ -7,7 +7,6 @@ public class Edge {
 	private int capacity;
 	private int from;
 	private int to;
-	private boolean isReverse;
 	private Edge reverse;
 
 	public Edge() {
@@ -24,19 +23,6 @@ public class Edge {
 		steps++;
 	}
 	
-	public Edge(int from, int to, int flow, int capacity, boolean isReverse) {
-		this.from = from;
-		steps++;
-		this.to = to;
-		steps++;
-		this.flow = flow;
-		steps++;
-		this.capacity = capacity;
-		steps++;
-		this.isReverse = isReverse;
-		steps++;
-	}
-
 	public void setReverse(Edge reverse) {
 		this.reverse = reverse;
 		steps++;
@@ -72,11 +58,6 @@ public class Edge {
 		steps++;
 		reverse.flow -= flow;
 		steps++;
-	}
-	
-	public boolean isReverse() {
-		steps++;
-		return isReverse;
 	}
 	
 	public long steps() {
