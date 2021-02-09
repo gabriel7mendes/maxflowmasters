@@ -18,9 +18,9 @@ public class Graph {
 	}
 
 	public void addEdge(int from, int to, int cap) {
-		Edge a = new Edge(from, to, 0, cap);
+		Edge a = new Edge(from, to, 0, cap, false);
 		steps++;
-		Edge b = new Edge(to, from, 0, 0);
+		Edge b = new Edge(to, from, 0, 0, true);
 		steps++;
 
 		a.setReverse(b);

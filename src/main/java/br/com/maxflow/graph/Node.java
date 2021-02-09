@@ -15,6 +15,10 @@ public class Node {
 		edges = new LinkedList<>();
 		steps++;
 	}
+	
+	public int getKey() {
+		return key;
+	}
 
 	public void addEdge(Edge edge) {
 		edges.insertBegin(edge);
@@ -22,7 +26,7 @@ public class Node {
 	}
 
 	public void setEdge(int i, Edge e) {
-		edges.deleteNode(i);
+		edges.deleteAt(i);
 		steps++;
 		edges.insertPosition(i, e);
 		steps++;

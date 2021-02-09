@@ -12,16 +12,16 @@ public class RandomFordFulkersonEmaApp1 {
 		
 		//String fileName = sc.next();
 		//int m = Integer.parseInt(sc.next());
-		int m = 10;
+		int m = 5;
 		int cap = 1000;
 		
 		RandomFordFulkersonEma randomFordFulkersonEma = new RandomFordFulkersonEma(m-1);
 				
-		//int s = 0;
-		//int t = 3;
-			
-		//randomFordFulkersonEma.createEdges(cap, m, s, t);
-		
+		int s = 0;
+		int t = 3;
+		randomFordFulkersonEma.createEdges(cap, m, s, t);
+		//randomFordFulkersonEma.randomPath(s, t);
+		/*
 		int s = 0;
 		int t = 5;
 		
@@ -35,10 +35,11 @@ public class RandomFordFulkersonEmaApp1 {
 		randomFordFulkersonEma.addEdge(3, t, 20);
 		randomFordFulkersonEma.addEdge(4, 3, 7);
 		randomFordFulkersonEma.addEdge(4, t, 4);
+		*/
 		
-		
+		//randomFordFulkersonEma.printAllPaths();
 		System.out.println("maxflow: " + randomFordFulkersonEma.maxFlow(s, t));
-		System.out.println("number of steps: " + randomFordFulkersonEma.steps());
+		//System.out.println("number of steps: " + randomFordFulkersonEma.steps());
 		
 		//FileWriter fw = new FileWriter(fileName);
 		//fw.write(randomFordFulkersonEma.steps() + "\n");

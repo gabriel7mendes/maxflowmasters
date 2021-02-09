@@ -12,15 +12,14 @@ public class RandomFordFulkersonEmaApp3 {
 		Scanner sc = new Scanner(System.in);
 		
 		String fileName = sc.next();
-		int m = Integer.parseInt(sc.next());
-		int flow = Integer.parseInt(sc.next());
+		int k = Integer.parseInt(sc.next());
 		
-		RandomFordFulkersonEma randomFordFulkersonEma = new RandomFordFulkersonEma(m-1);
+		RandomFordFulkersonEma randomFordFulkersonEma = new RandomFordFulkersonEma(k-1);
 				
 		int s = 0;
 		int t = 3;
 			
-		randomFordFulkersonEma.createEdges(flow, m, s, t);
+		randomFordFulkersonEma.createEdges(k, k, s, t);
 		
 		System.out.println("maxflow: " + randomFordFulkersonEma.maxFlow(s, t));
 		System.out.println("number of steps: " + randomFordFulkersonEma.steps());
