@@ -110,9 +110,9 @@ public class RandomFordFulkerson {
 
 		steps += stack.steps();
 		
-//		for (Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom())) {
-//			System.out.println(edge); 
-//		}
+		for (Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom())) {
+			System.out.println(edge); 
+		}
 		
 		if (graph.getParent(sink) == null) {
 			steps++;
@@ -148,8 +148,10 @@ public class RandomFordFulkerson {
 				steps++;
 			}
 			
-			//System.out.println("df: " + df);
-			//System.out.println("***********************");
+			System.out.println("df: " + df);
+			System.out.println();
+			System.out.println("******************************************");
+			System.out.println();
 
 			for (Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom())) {
 				edge.pushFlow(df);
