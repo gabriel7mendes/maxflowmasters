@@ -61,10 +61,16 @@ public class RandomFordFulkerson {
 		Stack<Node> stack = new Stack<>();
 		steps++;
 
+		Node sourceNode = graph.getNode(source);
+		steps++;
+		
 		stack.push(graph.getNode(source));
 		steps++;
 		
         int maxIter = 0;
+        steps++;
+        
+        Node node = null;
         steps++;
         
 		while (!stack.isEmpty()) {
@@ -76,7 +82,7 @@ public class RandomFordFulkerson {
 			
 			int n = curr.edgesSize();
 			steps++;
-			
+						
 			int j = r.nextInt(n);
 			steps++;
 			
@@ -87,24 +93,58 @@ public class RandomFordFulkerson {
 					&& edge.getTo() != source
 					&& edge.getCapacity() > edge.getFlow()) {
 				graph.setParent(edge.getTo(), edge);
-				stack.push(graph.getNode(edge.getTo()));
+				steps++;
+				
+				Node nodeTo = graph.getNode(edge.getTo());
+				steps++;
+				
+				stack.push(nodeTo);
+				steps++;
+				
 				maxIter = 0;
-				steps += 3;
+				steps++;
+				
+				node = nodeTo;
+				steps++;
 			} else if(curr.getKey() != sink){
 				stack.push(curr);
+				steps++;
+				
 				maxIter++;
-				steps += 2;
+				steps++;
 			}
 			
 			if(maxIter > 100) {
 				while(!stack.isEmpty()) {
 					stack.pop();
-					steps ++;
+					steps++;
 				}
-				graph.resetParent();
-				stack.push(graph.getNode(source));
+				
+				if(node != null && !node.equals(sourceNode)) {
+					Edge parent = node.getParent();
+					steps++;
+					
+					int from = parent.getFrom();
+					steps++;
+					
+					Node fromNode = graph.getNode(from);
+					steps++;
+					
+					stack.push(fromNode);
+					steps++;
+					
+					node = fromNode;
+					steps++;
+				} else {
+					graph.resetParent();
+					steps++;
+					
+					stack.push(sourceNode);
+					steps++;
+				}
+				
 				maxIter = 0;
-				steps += 3;
+				steps++;
 			}
 		}
 

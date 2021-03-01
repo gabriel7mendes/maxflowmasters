@@ -12,7 +12,7 @@ public class RandomFordFulkersonEmaApp1 {
 		Scanner sc = new Scanner(System.in);
 		
 		//String fileName = sc.next();
-		//int m = Integer.parseInt(sc.next());
+	    //int m = Integer.parseInt(sc.next());
 		int m = 5;
 		int cap = 1000;		
 		RandomFordFulkersonEma randomFordFulkersonEma = new RandomFordFulkersonEma(m-1);
