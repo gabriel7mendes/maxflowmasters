@@ -81,19 +81,20 @@ public class RandomFordFulkerson {
 
 			Edge edge = curr.getEdge(j);
 			steps++;
+			
+			int from, to;
+			steps++;
+			
+			to = edge.getTo();
+			steps++;
 
-			if (graph.getParent(edge.getTo()) == null && edge.getTo() != source
+			if (graph.getParent(to) == null && to != source
 					&& edge.getCapacity() > edge.getFlow()) {
-				int to = edge.getTo();
-				steps++;
 
 				graph.setParent(to, edge);
 				steps++;
 
-				Node nodeTo = graph.getNode(to);
-				steps++;
-
-				curr = nodeTo;
+				curr = graph.getNode(to);
 				steps++;
 
 				maxIter = 0;
@@ -119,7 +120,7 @@ public class RandomFordFulkerson {
 					Edge parent = node.getParent();
 					steps++;
 
-					int from = parent.getFrom();
+					from = parent.getFrom();
 					steps++;
 
 					Node nodeFrom = graph.getNode(from);
@@ -131,7 +132,7 @@ public class RandomFordFulkerson {
 					node = nodeFrom;
 					steps++;
 
-					int to = parent.getTo();
+					to = parent.getTo();
 					steps++;
 
 					graph.setParent(to, null);
@@ -149,10 +150,10 @@ public class RandomFordFulkerson {
 			}
 		}
 
-		/*
-		 * for (Edge edge = graph.getParent(sink); edge != null; edge =
-		 * graph.getParent(edge.getFrom())) { System.out.println(edge); }
-		 */
+		
+		  for (Edge edge = graph.getParent(sink); edge != null; edge =
+		  graph.getParent(edge.getFrom())) { System.out.println(edge); }
+		 
 		
 		if (graph.getParent(sink) == null) {
 			steps++;
@@ -188,11 +189,11 @@ public class RandomFordFulkerson {
 				steps++;
 			}
 
-			/*
-			 * System.out.println("df: " + df); System.out.println();
-			 * System.out.println("******************************************");
-			 * System.out.println();
-			 */
+			
+			  System.out.println("df: " + df); System.out.println();
+			  System.out.println("******************************************");
+			  System.out.println();
+			 
 
 			for (Edge edge = graph.getParent(sink); edge != null; edge = graph.getParent(edge.getFrom())) {
 				edge.pushFlow(df);
